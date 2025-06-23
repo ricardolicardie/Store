@@ -301,3 +301,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 console.log("StyleHaven website loaded successfully! 🎉")
 
+// Smooth scroll to section function
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId)
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+}
+
+// Update cart count on page load
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount()
+})
+
+// Function to update cart count
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]")
+  const cartCount = document.getElementById("cartCount")
+  if (cartCount) {
+    cartCount.textContent = cart.length
+  }
+}

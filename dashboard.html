@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - InviteHaven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#ec4899" />
+                                <stop offset="100%" stop-color="#a855f7" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="logo-text">InviteHaven</span>
+                </a>
+            </div>
+
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="cart.html" class="nav-link">Carrito</a>
+                <a href="#" class="nav-link active">Mi Cuenta</a>
+            </nav>
+
+            <div class="navbar-right">
+                <button class="cart-btn" onclick="window.location.href='cart.html'">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <line x1="3" x2="21" y1="6" y2="6"/>
+                        <path d="m16 10-4 4-4-4"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="btn btn-outline" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div class="user-welcome">
+                    <h1>¡Hola, <span id="userName">Usuario</span>!</h1>
+                    <p>Gestiona tus invitaciones y pedidos desde aquí</p>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalOrders">0</div>
+                        <div class="stat-label">Pedidos Totales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalInvitations">0</div>
+                        <div class="stat-label">Invitaciones Creadas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalDownloads">0</div>
+                        <div class="stat-label">Descargas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Navigation -->
+            <div class="dashboard-nav">
+                <button class="dashboard-tab active" data-tab="orders">Mis Pedidos</button>
+                <button class="dashboard-tab" data-tab="invitations">Mis Invitaciones</button>
+                <button class="dashboard-tab" data-tab="profile">Mi Perfil</button>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Orders Tab -->
+                <div class="dashboard-tab-content active" id="orders-tab">
+                    <div class="tab-header">
+                        <h2>Mis Pedidos</h2>
+                        <button class="btn btn-primary" onclick="window.location.href='index.html'">Crear Nueva Invitación</button>
+                    </div>
+
+                    <div class="orders-list" id="ordersList">
+                        <!-- Empty State -->
+                        <div class="empty-state" id="emptyOrders">
+                            <div class="empty-icon">
+                                <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                    <line x1="3" x2="21" y1="6" y2="6"/>
+                                    <path d="m16 10-4 4-4-4"/>
+                                </svg>
+                            </div>
+                            <h3>No tienes pedidos aún</h3>
+                            <p>¡Crea tu primera invitación personalizada!</p>
+                            <button class="btn btn-primary" onclick="window.location.href='index.html'">Explorar Diseños</button>
+                        </div>
+
+                        <!-- Orders will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Invitations Tab -->
+                <div class="dashboard-tab-content" id="invitations-tab">
+                    <div class="tab-header">
+                        <h2>Mis Invitaciones</h2>
+                        <div class="filter-options">
+                            <select id="categoryFilter">
+                                <option value="all">Todas las Categorías</option>
+                                <option value="cumpleanos">Cumpleaños</option>
+                                <option value="bodas">Bodas</option>
+                                <option value="baby-shower">Baby Shower</option>
+                                <option value="graduaciones">Graduaciones</option>
+                                <option value="empresariales">Empresariales</option>
+                                <option value="quinceaneras">Quinceañeras</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="invitations-grid" id="invitationsGrid">
+                        <!-- Empty State -->
+                        <div class="empty-state" id="emptyInvitations">
+                            <div class="empty-icon">
+                                <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3>No tienes invitaciones guardadas</h3>
+                            <p>Tus invitaciones personalizadas aparecerán aquí</p>
+                        </div>
+
+                        <!-- Invitations will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Profile Tab -->
+                <div class="dashboard-tab-content" id="profile-tab">
+                    <div class="tab-header">
+                        <h2>Mi Perfil</h2>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="profile-section">
+                            <h3>Información Personal</h3>
+                            <form id="profileForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="profileFirstName">Nombre</label>
+                                        <input type="text" id="profileFirstName" value="Usuario">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profileLastName">Apellido</label>
+                                        <input type="text" id="profileLastName" value="Demo">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profileEmail">Email</label>
+                                    <input type="email" id="profileEmail" value="usuario@demo.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profilePhone">Teléfono</label>
+                                    <input type="tel" id="profilePhone" value="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="profile-section">
+                            <h3>Preferencias</h3>
+                            <div class="preferences">
+                                <div class="preference-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="emailNotifications" checked>
+                                        <span class="checkmark"></span>
+                                        Recibir notificaciones por email
+                                    </label>
+                                </div>
+                                <div class="preference-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="promotionalEmails" checked>
+                                        <span class="checkmark"></span>
+                                        Recibir ofertas y promociones
+                                    </label>
+                                </div>
+                                <div class="preference-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="newDesignAlerts">
+                                        <span class="checkmark"></span>
+                                        Alertas de nuevos diseños
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-section">
+                            <h3>Cambiar Contraseña</h3>
+                            <form id="passwordForm">
+                                <div class="form-group">
+                                    <label for="currentPassword">Contraseña Actual</label>
+                                    <input type="password" id="currentPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newPassword">Nueva Contraseña</label>
+                                    <input type="password" id="newPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirmar Nueva Contraseña</label>
+                                    <input type="password" id="confirmPassword">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">InviteHaven</h3>
+                    <p class="footer-description">Crea invitaciones digitales únicas para tus eventos especiales.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Ayuda</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Centro de Ayuda</a></li>
+                        <li><a href="#" class="footer-link">Política de Reembolso</a></li>
+                        <li><a href="#" class="footer-link">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li>Email: hola@invitehaven.com</li>
+                        <li>WhatsApp: +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © <span id="currentYear"></span> InviteHaven. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

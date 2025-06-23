@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - InviteHaven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#ec4899" />
+                                <stop offset="100%" stop-color="#a855f7" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="logo-text">InviteHaven</span>
+                </a>
+            </div>
+
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="dashboard.html" class="nav-link">Mi Cuenta</a>
+            </nav>
+
+            <div class="navbar-right">
+                <button class="cart-btn active">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <line x1="3" x2="21" y1="6" y2="6"/>
+                        <path d="m16 10-4 4-4-4"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="btn btn-primary signin-btn" onclick="window.location.href='dashboard.html'">Mi Cuenta</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span>/</span>
+                <span>Carrito de Compras</span>
+            </div>
+
+            <div class="cart-header">
+                <h1>Tu Carrito de Compras</h1>
+                <p class="cart-subtitle">Revisa tus invitaciones personalizadas antes de proceder al pago</p>
+            </div>
+
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Empty Cart State -->
+                    <div class="empty-cart" id="emptyCart">
+                        <div class="empty-cart-icon">
+                            <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" x2="21" y1="6" y2="6"/>
+                                <path d="m16 10-4 4-4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Tu carrito está vacío</h3>
+                        <p>¡Explora nuestros hermosos diseños y crea tu invitación perfecta!</p>
+                        <button class="btn btn-primary" onclick="window.location.href='index.html'">Explorar Invitaciones</button>
+                    </div>
+
+                    <!-- Cart Items List -->
+                    <div class="cart-items-list" id="cartItemsList" style="display: none;">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-card">
+                        <h3>Resumen del Pedido</h3>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Descuento</span>
+                            <span id="discount" class="discount-amount">-$0.00</span>
+                        </div>
+                        
+                        <div class="summary-divider"></div>
+                        
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <div class="promo-code">
+                            <input type="text" id="promoInput" placeholder="Código de descuento">
+                            <button class="btn btn-outline" id="applyPromo">Aplicar</button>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" id="checkoutBtn">
+                            Proceder al Pago
+                        </button>
+
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                <span>Pago Seguro</span>
+                            </div>
+                            <div class="security-badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" x2="12" y1="15" y2="3"/>
+                                </svg>
+                                <span>Descarga Inmediata</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue Shopping -->
+            <div class="continue-shopping">
+                <button class="btn btn-outline" onclick="window.location.href='index.html'">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" x2="5" y1="12" y2="12"/>
+                        <polyline points="12,19 5,12 12,5"/>
+                    </svg>
+                    Continuar Comprando
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">InviteHaven</h3>
+                    <p class="footer-description">Crea invitaciones digitales únicas para tus eventos especiales.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Ayuda</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Centro de Ayuda</a></li>
+                        <li><a href="#" class="footer-link">Política de Reembolso</a></li>
+                        <li><a href="#" class="footer-link">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li>Email: hola@invitehaven.com</li>
+                        <li>WhatsApp: +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © <span id="currentYear"></span> InviteHaven. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
