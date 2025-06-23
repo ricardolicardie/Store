@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleHaven - Fashion & Home Decor</title>
-    <meta name="description" content="Discover your style, elevate your space with our curated collection of fashion and home decor items.">
+    <title>InviteHaven - Invitaciones Digitales Personalizadas</title>
+    <meta name="description" content="Crea invitaciones digitales únicas y personalizadas para tus eventos especiales.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
                         <line x1="4" x2="20" y1="18" y2="18"/>
                     </svg>
                 </button>
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                     <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2">
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -27,54 +27,48 @@
                                 <stop offset="100%" stop-color="#a855f7" />
                             </linearGradient>
                         </defs>
-                        <path d="M3 9l1.5 8h15L21 9H3z" />
-                        <path d="M3 9l2-4h14l2 4" />
-                        <path d="M9 17l-1 4" />
-                        <path d="M15 17l1 4" />
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
-                    <span class="logo-text">StyleHaven</span>
+                    <span class="logo-text">InviteHaven</span>
                 </a>
             </div>
 
             <nav class="desktop-nav">
-                <a href="#" class="nav-link">Kitchen</a>
-                <a href="#" class="nav-link">Boys</a>
-                <a href="#" class="nav-link">Men</a>
-                <a href="#" class="nav-link">Girls</a>
-                <a href="#" class="nav-link">Bedroom</a>
-                <a href="#" class="nav-link">Accessories</a>
+                <a href="#" class="nav-link">Cumpleaños</a>
+                <a href="#" class="nav-link">Bodas</a>
+                <a href="#" class="nav-link">Baby Shower</a>
+                <a href="#" class="nav-link">Graduaciones</a>
+                <a href="#" class="nav-link">Empresariales</a>
+                <a href="#" class="nav-link">Quinceañeras</a>
             </nav>
 
             <div class="navbar-right">
-                <button class="cart-btn">
+                <button class="cart-btn" onclick="window.location.href='cart.html'">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                         <line x1="3" x2="21" y1="6" y2="6"/>
                         <path d="m16 10-4 4-4-4"/>
                     </svg>
-                    <span class="cart-count">0</span>
+                    <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <button class="btn btn-primary signin-btn">Sign In</button>
+                <button class="btn btn-primary signin-btn" onclick="window.location.href='dashboard.html'">Mi Cuenta</button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-header">
-                <a href="#" class="logo">
-                    <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2">
+                <a href="index.html" class="logo">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="url(#gradient2)" stroke-width="2">
                         <defs>
                             <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" stop-color="#ec4899" />
                                 <stop offset="100%" stop-color="#a855f7" />
                             </linearGradient>
                         </defs>
-                        <path d="M3 9l1.5 8h15L21 9H3z" />
-                        <path d="M3 9l2-4h14l2 4" />
-                        <path d="M9 17l-1 4" />
-                        <path d="M15 17l1 4" />
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
-                    <span class="logo-text">StyleHaven</span>
+                    <span class="logo-text">InviteHaven</span>
                 </a>
                 <button class="close-btn" id="closeMenuBtn">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -84,14 +78,14 @@
                 </button>
             </div>
             <nav class="mobile-nav">
-                <a href="#" class="mobile-nav-link">Kitchen</a>
-                <a href="#" class="mobile-nav-link">Boys</a>
-                <a href="#" class="mobile-nav-link">Men</a>
-                <a href="#" class="mobile-nav-link">Girls</a>
-                <a href="#" class="mobile-nav-link">Bedroom</a>
-                <a href="#" class="mobile-nav-link">Accessories</a>
+                <a href="#" class="mobile-nav-link">Cumpleaños</a>
+                <a href="#" class="mobile-nav-link">Bodas</a>
+                <a href="#" class="mobile-nav-link">Baby Shower</a>
+                <a href="#" class="mobile-nav-link">Graduaciones</a>
+                <a href="#" class="mobile-nav-link">Empresariales</a>
+                <a href="#" class="mobile-nav-link">Quinceañeras</a>
                 <div class="mobile-signin">
-                    <button class="btn btn-primary btn-full">Sign In</button>
+                    <button class="btn btn-primary btn-full" onclick="window.location.href='dashboard.html'">Mi Cuenta</button>
                 </div>
             </nav>
         </div>
@@ -103,31 +97,31 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="hero-badge">New Summer Collection</div>
-                        <h1 class="hero-title">Discover Your Style, Elevate Your Space</h1>
+                        <div class="hero-badge">Invitaciones Digitales</div>
+                        <h1 class="hero-title">Crea Invitaciones Únicas para tus Eventos Especiales</h1>
                         <p class="hero-description">
-                            Explore our curated collection of fashion and home decor items that blend style, comfort, and quality.
+                            Diseña invitaciones digitales personalizadas con nuestros hermosos templates. Fácil, rápido y profesional.
                         </p>
                         <div class="hero-buttons">
-                            <button class="btn btn-primary">Shop Now</button>
-                            <button class="btn btn-outline">Explore Categories</button>
+                            <button class="btn btn-primary" onclick="scrollToSection('categories')">Crear Invitación</button>
+                            <button class="btn btn-outline" onclick="scrollToSection('how-it-works')">Cómo Funciona</button>
                         </div>
                     </div>
                     <div class="hero-image">
                         <div class="hero-image-container">
-                            <img src="/placeholder.svg?height=500&width=500" alt="Hero image" class="hero-img">
+                            <img src="/placeholder.svg?height=500&width=500" alt="Invitaciones digitales" class="hero-img">
                             <div class="hero-card hero-card-1">
                                 <div class="hero-card-icon"></div>
                                 <div class="hero-card-content">
-                                    <div class="hero-card-title">Summer Sale</div>
-                                    <div class="hero-card-subtitle">Up to 50% off</div>
+                                    <div class="hero-card-title">Personalizable</div>
+                                    <div class="hero-card-subtitle">100% editable</div>
                                 </div>
                             </div>
                             <div class="hero-card hero-card-2">
                                 <div class="hero-card-icon"></div>
                                 <div class="hero-card-content">
-                                    <div class="hero-card-title">Free Shipping</div>
-                                    <div class="hero-card-subtitle">On orders over $50</div>
+                                    <div class="hero-card-title">Descarga Inmediata</div>
+                                    <div class="hero-card-subtitle">PDF y PNG</div>
                                 </div>
                             </div>
                         </div>
@@ -138,88 +132,135 @@
             <div class="hero-bg-2"></div>
         </section>
 
-        <!-- Categories Section -->
-        <section class="categories">
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Shop by Category</h2>
-                    <p class="section-description">Explore our wide range of products across different categories</p>
+                    <h2 class="section-title">¿Cómo Funciona?</h2>
+                    <p class="section-description">Crea tu invitación perfecta en solo 3 simples pasos</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                                <line x1="12" x2="12" y1="22.08" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Elige tu Diseño</h3>
+                        <p class="step-description">Selecciona entre nuestros hermosos templates diseñados para cada ocasión especial.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Personaliza</h3>
+                        <p class="step-description">Edita el texto, colores y detalles para que tu invitación sea única y perfecta.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" x2="12" y1="15" y2="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Descarga</h3>
+                        <p class="step-description">Descarga tu invitación en alta calidad en formato PDF o PNG listo para compartir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Categorías de Invitaciones</h2>
+                    <p class="section-description">Encuentra el diseño perfecto para tu evento especial</p>
                 </div>
                 <div class="category-grid" id="categoryGrid">
-                    <div class="category-card" data-category="kitchen">
-                        <a href="#" class="category-link">
+                    <div class="category-card" data-category="cumpleanos">
+                        <a href="product-detail.html?category=cumpleanos" class="category-link">
                             <div class="category-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Kitchen">
+                                <img src="/placeholder.svg?height=300&width=300" alt="Cumpleaños">
                                 <div class="category-overlay"></div>
                             </div>
                             <div class="category-content">
-                                <h3 class="category-name">Kitchen</h3>
-                                <p class="category-description">Modern kitchen essentials</p>
+                                <h3 class="category-name">Cumpleaños</h3>
+                                <p class="category-description">Celebra con estilo</p>
                                 <div class="category-line"></div>
                             </div>
                         </a>
                     </div>
-                    <div class="category-card" data-category="boys">
-                        <a href="#" class="category-link">
+                    <div class="category-card" data-category="bodas">
+                        <a href="product-detail.html?category=bodas" class="category-link">
                             <div class="category-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Boys">
+                                <img src="/placeholder.svg?height=300&width=300" alt="Bodas">
                                 <div class="category-overlay"></div>
                             </div>
                             <div class="category-content">
-                                <h3 class="category-name">Boys</h3>
-                                <p class="category-description">Stylish clothing for boys</p>
+                                <h3 class="category-name">Bodas</h3>
+                                <p class="category-description">Tu día especial</p>
                                 <div class="category-line"></div>
                             </div>
                         </a>
                     </div>
-                    <div class="category-card" data-category="men">
-                        <a href="#" class="category-link">
+                    <div class="category-card" data-category="baby-shower">
+                        <a href="product-detail.html?category=baby-shower" class="category-link">
                             <div class="category-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Men">
+                                <img src="/placeholder.svg?height=300&width=300" alt="Baby Shower">
                                 <div class="category-overlay"></div>
                             </div>
                             <div class="category-content">
-                                <h3 class="category-name">Men</h3>
-                                <p class="category-description">Contemporary men's fashion</p>
+                                <h3 class="category-name">Baby Shower</h3>
+                                <p class="category-description">Bienvenida al bebé</p>
                                 <div class="category-line"></div>
                             </div>
                         </a>
                     </div>
-                    <div class="category-card" data-category="girls">
-                        <a href="#" class="category-link">
+                    <div class="category-card" data-category="graduaciones">
+                        <a href="product-detail.html?category=graduaciones" class="category-link">
                             <div class="category-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Girls">
+                                <img src="/placeholder.svg?height=300&width=300" alt="Graduaciones">
                                 <div class="category-overlay"></div>
                             </div>
                             <div class="category-content">
-                                <h3 class="category-name">Girls</h3>
-                                <p class="category-description">Trendy outfits for girls</p>
+                                <h3 class="category-name">Graduaciones</h3>
+                                <p class="category-description">Logro alcanzado</p>
                                 <div class="category-line"></div>
                             </div>
                         </a>
                     </div>
-                    <div class="category-card" data-category="bedroom">
-                        <a href="#" class="category-link">
+                    <div class="category-card" data-category="empresariales">
+                        <a href="product-detail.html?category=empresariales" class="category-link">
                             <div class="category-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Bedroom">
+                                <img src="/placeholder.svg?height=300&width=300" alt="Empresariales">
                                 <div class="category-overlay"></div>
                             </div>
                             <div class="category-content">
-                                <h3 class="category-name">Bedroom</h3>
-                                <p class="category-description">Cozy bedroom furnishings</p>
+                                <h3 class="category-name">Empresariales</h3>
+                                <p class="category-description">Eventos corporativos</p>
                                 <div class="category-line"></div>
                             </div>
                         </a>
                     </div>
-                    <div class="category-card" data-category="accessories">
-                        <a href="#" class="category-link">
+                    <div class="category-card" data-category="quinceaneras">
+                        <a href="product-detail.html?category=quinceaneras" class="category-link">
                             <div class="category-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Accessories">
+                                <img src="/placeholder.svg?height=300&width=300" alt="Quinceañeras">
                                 <div class="category-overlay"></div>
                             </div>
                             <div class="category-content">
-                                <h3 class="category-name">Accessories</h3>
-                                <p class="category-description">Complete your look</p>
+                                <h3 class="category-name">Quinceañeras</h3>
+                                <p class="category-description">Tus dulces 15</p>
                                 <div class="category-line"></div>
                             </div>
                         </a>
@@ -232,15 +273,15 @@
         <section class="featured-products">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Featured Products</h2>
-                    <p class="section-description">Discover our most popular items</p>
+                    <h2 class="section-title">Diseños Populares</h2>
+                    <p class="section-description">Los templates más elegidos por nuestros clientes</p>
                 </div>
                 <div class="products-grid" id="productsGrid">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="1">
                         <div class="product-image">
-                            <img src="/placeholder.svg?height=400&width=400" alt="Ceramic Dinner Set">
+                            <img src="/placeholder.svg?height=400&width=400" alt="Invitación Cumpleaños Elegante">
                             <div class="product-badges">
-                                <span class="badge badge-new">New</span>
+                                <span class="badge badge-new">Popular</span>
                             </div>
                             <div class="product-actions">
                                 <button class="product-action-btn wishlist-btn">
@@ -248,28 +289,27 @@
                                         <path d="m19 14 1.5-1.5c.55-.55.55-1.45 0-2L19 9l-7 7-7-7-1.5 1.5c-.55.55-.55 1.45 0 2L5 14l7 7 7-7z"/>
                                     </svg>
                                 </button>
-                                <button class="product-action-btn cart-btn-product">
+                                <button class="product-action-btn cart-btn-product" onclick="window.location.href='product-detail.html?id=1'">
                                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                        <line x1="3" x2="21" y1="6" y2="6"/>
-                                        <path d="m16 10-4 4-4-4"/>
+                                        <path d="M12 20h9"/>
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                                     </svg>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Kitchen</div>
-                            <h3 class="product-name">Ceramic Dinner Set</h3>
+                            <div class="product-category">Cumpleaños</div>
+                            <h3 class="product-name">Invitación Elegante Rosa</h3>
                             <div class="product-price">
-                                <span class="price">$89.99</span>
+                                <span class="price">$9.99</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="2">
                         <div class="product-image">
-                            <img src="/placeholder.svg?height=400&width=400" alt="Casual Denim Jacket">
+                            <img src="/placeholder.svg?height=400&width=400" alt="Invitación Boda Clásica">
                             <div class="product-badges">
-                                <span class="badge badge-sale">Sale</span>
+                                <span class="badge badge-sale">Oferta</span>
                             </div>
                             <div class="product-actions">
                                 <button class="product-action-btn wishlist-btn">
@@ -277,29 +317,28 @@
                                         <path d="m19 14 1.5-1.5c.55-.55.55-1.45 0-2L19 9l-7 7-7-7-1.5 1.5c-.55.55-.55 1.45 0 2L5 14l7 7 7-7z"/>
                                     </svg>
                                 </button>
-                                <button class="product-action-btn cart-btn-product">
+                                <button class="product-action-btn cart-btn-product" onclick="window.location.href='product-detail.html?id=2'">
                                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                        <line x1="3" x2="21" y1="6" y2="6"/>
-                                        <path d="m16 10-4 4-4-4"/>
+                                        <path d="M12 20h9"/>
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                                     </svg>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Men</div>
-                            <h3 class="product-name">Casual Denim Jacket</h3>
+                            <div class="product-category">Bodas</div>
+                            <h3 class="product-name">Boda Clásica Azul</h3>
                             <div class="product-price">
-                                <span class="price">$59.99</span>
-                                <span class="original-price">$79.99</span>
+                                <span class="price">$12.99</span>
+                                <span class="original-price">$15.99</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="3">
                         <div class="product-image">
-                            <img src="/placeholder.svg?height=400&width=400" alt="Floral Summer Dress">
+                            <img src="/placeholder.svg?height=400&width=400" alt="Invitación Baby Shower">
                             <div class="product-badges">
-                                <span class="badge badge-new">New</span>
+                                <span class="badge badge-new">Nuevo</span>
                             </div>
                             <div class="product-actions">
                                 <button class="product-action-btn wishlist-btn">
@@ -307,28 +346,27 @@
                                         <path d="m19 14 1.5-1.5c.55-.55.55-1.45 0-2L19 9l-7 7-7-7-1.5 1.5c-.55.55-.55 1.45 0 2L5 14l7 7 7-7z"/>
                                     </svg>
                                 </button>
-                                <button class="product-action-btn cart-btn-product">
+                                <button class="product-action-btn cart-btn-product" onclick="window.location.href='product-detail.html?id=3'">
                                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                        <line x1="3" x2="21" y1="6" y2="6"/>
-                                        <path d="m16 10-4 4-4-4"/>
+                                        <path d="M12 20h9"/>
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                                     </svg>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Girls</div>
-                            <h3 class="product-name">Floral Summer Dress</h3>
+                            <div class="product-category">Baby Shower</div>
+                            <h3 class="product-name">Baby Shower Dulce</h3>
                             <div class="product-price">
-                                <span class="price">$45.99</span>
+                                <span class="price">$8.99</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="4">
                         <div class="product-image">
-                            <img src="/placeholder.svg?height=400&width=400" alt="Luxury Bedding Set">
+                            <img src="/placeholder.svg?height=400&width=400" alt="Invitación Graduación">
                             <div class="product-badges">
-                                <span class="badge badge-sale">Sale</span>
+                                <span class="badge badge-sale">Popular</span>
                             </div>
                             <div class="product-actions">
                                 <button class="product-action-btn wishlist-btn">
@@ -336,21 +374,20 @@
                                         <path d="m19 14 1.5-1.5c.55-.55.55-1.45 0-2L19 9l-7 7-7-7-1.5 1.5c-.55.55-.55 1.45 0 2L5 14l7 7 7-7z"/>
                                     </svg>
                                 </button>
-                                <button class="product-action-btn cart-btn-product">
+                                <button class="product-action-btn cart-btn-product" onclick="window.location.href='product-detail.html?id=4'">
                                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                        <line x1="3" x2="21" y1="6" y2="6"/>
-                                        <path d="m16 10-4 4-4-4"/>
+                                        <path d="M12 20h9"/>
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                                     </svg>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Bedroom</div>
-                            <h3 class="product-name">Luxury Bedding Set</h3>
+                            <div class="product-category">Graduación</div>
+                            <h3 class="product-name">Graduación Dorada</h3>
                             <div class="product-price">
-                                <span class="price">$129.99</span>
-                                <span class="original-price">$159.99</span>
+                                <span class="price">$11.99</span>
+                                <span class="original-price">$14.99</span>
                             </div>
                         </div>
                     </div>
@@ -363,13 +400,13 @@
             <div class="container">
                 <div class="newsletter-content">
                     <div class="newsletter-text">
-                        <h2 class="newsletter-title">Join Our Community</h2>
+                        <h2 class="newsletter-title">Únete a Nuestra Comunidad</h2>
                         <p class="newsletter-description">
-                            Subscribe to our newsletter for exclusive deals, new arrivals, and more.
+                            Suscríbete para recibir nuevos diseños, ofertas exclusivas y tips de diseño.
                         </p>
                         <div class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" class="newsletter-input">
-                            <button class="btn btn-primary">Subscribe</button>
+                            <input type="email" placeholder="Ingresa tu email" class="newsletter-input">
+                            <button class="btn btn-primary">Suscribirse</button>
                         </div>
                     </div>
                     <div class="newsletter-image">
@@ -385,40 +422,40 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">StyleHaven</h3>
-                    <p class="footer-description">Your one-stop shop for fashion and home decor.</p>
+                    <h3 class="footer-title">InviteHaven</h3>
+                    <p class="footer-description">Crea invitaciones digitales únicas para tus eventos especiales.</p>
                 </div>
                 <div class="footer-section">
-                    <h3 class="footer-title">Categories</h3>
+                    <h3 class="footer-title">Categorías</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Kitchen</a></li>
-                        <li><a href="#" class="footer-link">Boys</a></li>
-                        <li><a href="#" class="footer-link">Men</a></li>
-                        <li><a href="#" class="footer-link">Girls</a></li>
-                        <li><a href="#" class="footer-link">Bedroom</a></li>
-                        <li><a href="#" class="footer-link">Accessories</a></li>
+                        <li><a href="#" class="footer-link">Cumpleaños</a></li>
+                        <li><a href="#" class="footer-link">Bodas</a></li>
+                        <li><a href="#" class="footer-link">Baby Shower</a></li>
+                        <li><a href="#" class="footer-link">Graduaciones</a></li>
+                        <li><a href="#" class="footer-link">Empresariales</a></li>
+                        <li><a href="#" class="footer-link">Quinceañeras</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3 class="footer-title">Help</h3>
+                    <h3 class="footer-title">Ayuda</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Customer Service</a></li>
-                        <li><a href="#" class="footer-link">Track Order</a></li>
-                        <li><a href="#" class="footer-link">Returns & Exchanges</a></li>
-                        <li><a href="#" class="footer-link">Shipping Info</a></li>
+                        <li><a href="#" class="footer-link">Centro de Ayuda</a></li>
+                        <li><a href="#" class="footer-link">Cómo Personalizar</a></li>
+                        <li><a href="#" class="footer-link">Formatos de Descarga</a></li>
+                        <li><a href="#" class="footer-link">Política de Reembolso</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3 class="footer-title">Contact</h3>
+                    <h3 class="footer-title">Contacto</h3>
                     <ul class="footer-contact">
-                        <li>Email: info@stylehaven.com</li>
-                        <li>Phone: (123) 456-7890</li>
-                        <li>Address: 123 Fashion St, Style City</li>
+                        <li>Email: hola@invitehaven.com</li>
+                        <li>WhatsApp: +1 (555) 123-4567</li>
+                        <li>Horario: Lun-Vie 9AM-6PM</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                © <span id="currentYear"></span> StyleHaven. All rights reserved.
+                © <span id="currentYear"></span> InviteHaven. Todos los derechos reservados.
             </div>
         </div>
     </footer>
@@ -426,4 +463,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
