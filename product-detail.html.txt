@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar Invitación - InviteHaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#ec4899" />
+                                <stop offset="100%" stop-color="#a855f7" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="logo-text">InviteHaven</span>
+                </a>
+            </div>
+
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="cart.html" class="nav-link">Carrito</a>
+                <a href="dashboard.html" class="nav-link">Mi Cuenta</a>
+            </nav>
+
+            <div class="navbar-right">
+                <button class="cart-btn" onclick="window.location.href='cart.html'">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <line x1="3" x2="21" y1="6" y2="6"/>
+                        <path d="m16 10-4 4-4-4"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="btn btn-primary signin-btn" onclick="window.location.href='dashboard.html'">Mi Cuenta</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-detail-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span>/</span>
+                <span id="currentCategory">Invitaciones</span>
+                <span>/</span>
+                <span>Personalizar</span>
+            </div>
+
+            <div class="product-detail-content">
+                <!-- Editor Panel -->
+                <div class="editor-panel">
+                    <div class="editor-header">
+                        <h2>Personaliza tu Invitación</h2>
+                        <div class="editor-actions">
+                            <button class="btn btn-outline" id="previewBtn">Vista Previa</button>
+                            <button class="btn btn-primary" id="addToCartBtn">Añadir al Carrito - $9.99</button>
+                        </div>
+                    </div>
+
+                    <div class="editor-tabs">
+                        <button class="tab-btn active" data-tab="text">Texto</button>
+                        <button class="tab-btn" data-tab="colors">Colores</button>
+                        <button class="tab-btn" data-tab="design">Diseño</button>
+                    </div>
+
+                    <!-- Text Tab -->
+                    <div class="tab-content active" id="text-tab">
+                        <div class="form-group">
+                            <label for="eventTitle">Título del Evento</label>
+                            <input type="text" id="eventTitle" value="¡Estás Invitado!" placeholder="Ej: ¡Estás Invitado!">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventName">Nombre del Evento</label>
+                            <input type="text" id="eventName" value="Cumpleaños de María" placeholder="Ej: Cumpleaños de María">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Fecha</label>
+                            <input type="text" id="eventDate" value="15 de Diciembre, 2024" placeholder="Ej: 15 de Diciembre, 2024">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventTime">Hora</label>
+                            <input type="text" id="eventTime" value="6:00 PM" placeholder="Ej: 6:00 PM">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventLocation">Lugar</label>
+                            <input type="text" id="eventLocation" value="Salón de Eventos Paradise" placeholder="Ej: Salón de Eventos Paradise">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventAddress">Dirección</label>
+                            <input type="text" id="eventAddress" value="Av. Principal 123, Ciudad" placeholder="Ej: Av. Principal 123, Ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalInfo">Información Adicional</label>
+                            <textarea id="additionalInfo" placeholder="Ej: Confirma tu asistencia, Código de vestimenta, etc.">Confirma tu asistencia al WhatsApp +1234567890</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Colors Tab -->
+                    <div class="tab-content" id="colors-tab">
+                        <div class="color-section">
+                            <h4>Color Principal</h4>
+                            <div class="color-palette">
+                                <div class="color-option active" data-color="#FFD1DC" style="background: #FFD1DC;"></div>
+                                <div class="color-option" data-color="#E6F3FF" style="background: #E6F3FF;"></div>
+                                <div class="color-option" data-color="#F0E6FF" style="background: #F0E6FF;"></div>
+                                <div class="color-option" data-color="#E6FFE6" style="background: #E6FFE6;"></div>
+                                <div class="color-option" data-color="#FFF0E6" style="background: #FFF0E6;"></div>
+                                <div class="color-option" data-color="#FFE6F0" style="background: #FFE6F0;"></div>
+                            </div>
+                        </div>
+                        <div class="color-section">
+                            <h4>Color de Texto</h4>
+                            <div class="color-palette">
+                                <div class="color-option active" data-text-color="#333333" style="background: #333333;"></div>
+                                <div class="color-option" data-text-color="#FFFFFF" style="background: #FFFFFF; border: 1px solid #ddd;"></div>
+                                <div class="color-option" data-text-color="#8B4513" style="background: #8B4513;"></div>
+                                <div class="color-option" data-text-color="#2E8B57" style="background: #2E8B57;"></div>
+                                <div class="color-option" data-text-color="#4169E1" style="background: #4169E1;"></div>
+                                <div class="color-option" data-text-color="#DC143C" style="background: #DC143C;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Tab -->
+                    <div class="tab-content" id="design-tab">
+                        <div class="design-section">
+                            <h4>Estilo de Fuente</h4>
+                            <div class="font-options">
+                                <button class="font-option active" data-font="elegant">Elegante</button>
+                                <button class="font-option" data-font="modern">Moderno</button>
+                                <button class="font-option" data-font="classic">Clásico</button>
+                                <button class="font-option" data-font="playful">Divertido</button>
+                            </div>
+                        </div>
+                        <div class="design-section">
+                            <h4>Decoración</h4>
+                            <div class="decoration-options">
+                                <button class="decoration-option active" data-decoration="flowers">Flores</button>
+                                <button class="decoration-option" data-decoration="geometric">Geométrico</button>
+                                <button class="decoration-option" data-decoration="minimal">Minimalista</button>
+                                <button class="decoration-option" data-decoration="vintage">Vintage</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="preview-panel">
+                    <div class="preview-header">
+                        <h3>Vista Previa</h3>
+                        <div class="preview-actions">
+                            <button class="btn btn-outline" id="downloadPNG">Descargar PNG</button>
+                            <button class="btn btn-primary" id="downloadPDF">Descargar PDF</button>
+                        </div>
+                    </div>
+                    
+                    <div class="invitation-preview" id="invitationPreview">
+                        <div class="invitation-card" id="invitationCard">
+                            <div class="invitation-decoration"></div>
+                            <div class="invitation-content">
+                                <h1 class="invitation-title" id="previewTitle">¡Estás Invitado!</h1>
+                                <h2 class="invitation-event" id="previewEventName">Cumpleaños de María</h2>
+                                
+                                <div class="invitation-details">
+                                    <div class="detail-item">
+                                        <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="16" x2="16" y1="2" y2="6"/>
+                                            <line x1="8" x2="8" y1="2" y2="6"/>
+                                            <line x1="3" x2="21" y1="10" y2="10"/>
+                                        </svg>
+                                        <span id="previewDate">15 de Diciembre, 2024</span>
+                                    </div>
+                                    
+                                    <div class="detail-item">
+                                        <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <polyline points="12,6 12,12 16,14"/>
+                                        </svg>
+                                        <span id="previewTime">6:00 PM</span>
+                                    </div>
+                                    
+                                    <div class="detail-item">
+                                        <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                        <div>
+                                            <div id="previewLocation">Salón de Eventos Paradise</div>
+                                            <div class="location-address" id="previewAddress">Av. Principal 123, Ciudad</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="invitation-footer">
+                                    <p id="previewAdditionalInfo">Confirma tu asistencia al WhatsApp +1234567890</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Vista Previa Completa</h3>
+                <button class="close-modal" id="closeModal">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" x2="6" y1="6" y2="18"/>
+                        <line x1="6" x2="18" y1="6" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="invitation-preview-large" id="invitationPreviewLarge">
+                    <!-- Copia del contenido de la invitación -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalDownloadPNG">Descargar PNG</button>
+                <button class="btn btn-primary" id="modalDownloadPDF">Descargar PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>
