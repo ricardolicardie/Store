@@ -1,22 +1,24 @@
-// Import the Firebase SDK
-import firebase from "firebase/app"
-import "firebase/auth"
-import "firebase/firestore"
-import "firebase/storage"
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Firebase Configuration
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  // Reemplaza estos valores con tu configuración de Firebase
-  apiKey: "tu-api-key-aqui",
-  authDomain: "invitehaven-demo.firebaseapp.com",
-  projectId: "invitehaven-demo",
-  storageBucket: "invitehaven-demo.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcdef123456",
-}
+  apiKey: "AIzaSyD5ZEfenJLOYutc4DCZUiD44Q0IuasbXm8",
+  authDomain: "invitehaven-ricardo.firebaseapp.com",
+  projectId: "invitehaven-ricardo",
+  storageBucket: "invitehaven-ricardo.firebasestorage.app",
+  messagingSenderId: "160223686235",
+  appId: "1:160223686235:web:14f3a14b56e0b48161597e",
+  measurementId: "G-CLNK56D356"
+};
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Initialize Firebase services
 const auth = firebase.auth()
