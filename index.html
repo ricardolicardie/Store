@@ -6,6 +6,12 @@
     <title>InviteHaven - Invitaciones Digitales Personalizadas</title>
     <meta name="description" content="Crea invitaciones digitales únicas y personalizadas para tus eventos especiales.">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -51,7 +57,7 @@
                     </svg>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <button class="btn btn-primary signin-btn" onclick="window.location.href='dashboard.html'">Mi Cuenta</button>
+                <button class="btn btn-primary signin-btn">Iniciar Sesión</button>
             </div>
         </div>
 
@@ -85,12 +91,13 @@
                 <a href="#" class="mobile-nav-link">Empresariales</a>
                 <a href="#" class="mobile-nav-link">Quinceañeras</a>
                 <div class="mobile-signin">
-                    <button class="btn btn-primary btn-full" onclick="window.location.href='dashboard.html'">Mi Cuenta</button>
+                    <button class="btn btn-primary btn-full mobile-signin-btn">Iniciar Sesión</button>
                 </div>
             </nav>
         </div>
     </header>
 
+    <!-- Rest of the HTML content remains the same -->
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -460,6 +467,8 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="firebase-config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
